@@ -1,0 +1,13 @@
+navbar-header { font-family: 'Alegreya Sans', sans-serif; font-weight: 400 }
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
+}
+
+footer {
+    margin: 50px 0;
+}
