@@ -10,7 +10,6 @@ $(function() {
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
-            var phone = $("input#phone").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
@@ -45,7 +44,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success').append("<strong>Thank you for contacting me!");
-                    $('#success > .alert-danger').append('</div>');
+                    $('#success > .alert-success').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
