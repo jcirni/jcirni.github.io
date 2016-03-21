@@ -14,13 +14,13 @@ function changeKitty() {
 function voteUp() {
     var upvote = Number(document.getElementById('myUpVote').innerHTML);
     upvote += 1;
-    document.getElementById("myUpVote").innerHTML = upvote;
+    document.getElementById("myUpVote").innerHTML ="  "+ upvote + " ";
 }
 
 function voteDown() {
     var downvote = Number(document.getElementById('myDownVote').innerHTML);
     downvote += 1;
-    document.getElementById("myDownVote").innerHTML = downvote;
+    document.getElementById("myDownVote").innerHTML ="  "+ downvote + " ";
 }
 
 function uploadKitty(){
