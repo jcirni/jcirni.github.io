@@ -26,7 +26,7 @@
 
 </head>
 
-<body>
+<body onload="changeKitty()">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -60,7 +60,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Welcome to KittyGen!
-                    <small>Find your favorite kitty</small>
+                    <small>Look at kitty</small>
                 </h1>
             </div>
         </div>
@@ -70,23 +70,44 @@
         <div class="row">
 
             <div class="col-md-7">
-               <img id="myImage" onclick="changeImage()" src="img/cats/cat-%20(101).jpg">                
+               <img id="myImage" class="img-responsive"  onclick="changeKitty()" src="">                
 
             </div>
             <div class="col-md-2" text-center>
-                <p>Click here to find your favority kitt!</p>
-                  <button type="button"
-                    onclick="changeImage()">
-                    New Kitty!</button>
+                <ul class="list-inline">
+                    <p>Vote for kitty!</p>
+                     <li> <button type="button" class="btn btn-primary"
+                        onclick="changeKitty()">
+                        Next Kitty!</button></li>
+                </ul>
+                    <div class="vote-panel" vcenter>
+                        <ul class="list-inline">
+                            <li><button type="button" class="btn btn-success" onclick="voteUp()">Purr </button></li>
+                            <li id="myUpVote"> 1</li>
+                            <li><button type="button" class="btn btn-danger" onclick="voteDown()">Pass</button></li>
+                            <li id="myDownVote"> 1</li>
+                        </ul>
+                    </div>
+                
             </div>
                 
             <div class="col-md-3">
-                <h3></h3>
-              
-                <h3>Upload Kitty</h3>
-                <ul>
-                    <li></li>
-                </ul>
+                <div class = "panel panel-primary">
+                   <div class = "panel-heading">
+                      <h3 class = "panel-title">Upload Kitty!</h3>
+                   </div>
+                   <div class = "panel-body">
+
+                    <input type="file" id="myFile" multiple size="50" onchange="uploadKitty()">
+
+                    <p id="msg"></p>   
+
+
+                    <p><strong>Tip:</strong> Use the Control or the Shift key to select multiple files.</p>
+
+                       
+                   </div>
+                </div>
             </div>
 
         </div>

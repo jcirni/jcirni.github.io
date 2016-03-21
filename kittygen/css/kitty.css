@@ -11,3 +11,13 @@ body {
 footer {
     margin: 50px 0;
 }
+
+.vote-panel {
+    
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
