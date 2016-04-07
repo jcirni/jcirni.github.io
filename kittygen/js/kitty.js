@@ -17,6 +17,7 @@ function voteUp() {
     document.getElementById("myUpVote").innerHTML ="  "+ upvote + " ";
 }
 
+
 function voteDown() {
     var downvote = Number(document.getElementById('myDownVote').innerHTML);
     downvote += 1;
