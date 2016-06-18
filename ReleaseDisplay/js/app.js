@@ -1,4 +1,5 @@
 function moreHeadlines(strAPI) {
+    "use strict";
     //Call StellBioTech NewsRelease
     $.getJSON(strAPI, function (pressReleases) {
 
@@ -17,16 +18,15 @@ function moreHeadlines(strAPI) {
 
 var main = function () {
     "use strict";
-    
     //control api output with limit & offset
     var limit = 10,
         offset = 0,
         win = $(window),
         url = "http://www.stellarbiotechnologies.com/media/press-releases/json?limit=" + limit.toString() + "&offset=" + offset.toString();
-    //on end of document, load more headlines
-    
     moreHeadlines(url);
     
+    
+    //on end of document, load more headlines
     win.scroll(function () {
         if ($(document).height() - win.height() === win.scrollTop()) {
             offset += 10;
