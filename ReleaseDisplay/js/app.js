@@ -25,17 +25,16 @@ var main = function () {
     //control api output with limit & offset
     var limit = 10,
         offset = 0,
-        win = $(window),
-        status = false,
+        $win = $(window),
         url = "http://www.stellarbiotechnologies.com/media/press-releases/json?limit=" + limit.toString() + "&offset=" + offset.toString();
-        
+
     moreHeadlines(url);
     
     //on end of document, load more headlines
-    win.scroll(function () {
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 150) {
-            offset += 5;
-            limit = 5;
+    $win.scroll(function () {
+        if ($win.scrollTop() + $win.height() > $(document).height() - 150) {
+            offset += 10;
+            limit = 10;
             url = "http://www.stellarbiotechnologies.com/media/press-releases/json?limit=" + limit.toString() + "&offset=" + offset.toString();
             //request more headlines at new offset
             moreHeadlines(url);
