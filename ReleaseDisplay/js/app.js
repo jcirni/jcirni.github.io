@@ -33,7 +33,6 @@ var main = function () {
     
     //on end of document, load more headlines
     win.scroll(function () {
-        console.log($(document).height() - win.height() - win.scrollTop());
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 150) {
             offset += 5;
             limit = 5;
