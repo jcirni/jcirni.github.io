@@ -34,7 +34,7 @@ var main = function () {
     //on end of document, load more headlines
     win.scroll(function () {
         console.log($(document).height() - win.height() - win.scrollTop());
-        if ($(document).height() - win.height() === win.scrollTop()) {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 150) {
             offset += 5;
             limit = 5;
             url = "http://www.stellarbiotechnologies.com/media/press-releases/json?limit=" + limit.toString() + "&offset=" + offset.toString();
