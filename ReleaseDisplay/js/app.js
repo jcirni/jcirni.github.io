@@ -4,17 +4,18 @@ function moreHeadlines(strAPI) {
     $.getJSON(strAPI, function (pressReleases) {
 
         pressReleases.news.forEach(function (headline) {
-            var $pandiv = $('<div class="panel panel-default">'),
+            var $panel = $('<div class="panel panel-default">'),
                 $h2 = $("<h2>"),
                 $p = $("<p>");
-            //console.log(headline.title + ", " + headline.published);
+            $panel.hide();
             $h2.text(headline.title);
             $p.text(headline.published);
-            $(".releases").append($pandiv);
-            $pandiv.append($h2);
-            $pandiv.append($p);
+            $panel.append($h2);
+            $panel.append($p);
+            $(".releases").append($panel);
+            $panel.fadeIn();
         });
-        //console.log(pressReleases);
+  
         
     });
 }
