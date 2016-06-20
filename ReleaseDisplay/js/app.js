@@ -15,9 +15,9 @@ function moreHeadlines(strAPI) {
             $(".releases").append($panel);
             $panel.fadeIn();
         });
-  
         
     });
+    
 }
 
 var main = function () {
