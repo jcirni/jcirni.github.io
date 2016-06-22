@@ -25,6 +25,7 @@ var main = function () {
     //control api output with limit & offset
     var limit = 10,
         offset = 0,
+        didScroll = false,
         $win = $(window),
         url = "http://www.stellarbiotechnologies.com/media/press-releases/json?limit=" + limit.toString() + "&offset=" + offset.toString();
 
@@ -32,15 +33,24 @@ var main = function () {
     
     //on end of document, load more headlines
     $win.scroll(function () {
-        if ($win.scrollTop() + $win.height() > $(document).height() - 150) {
-            offset += 5;
-            limit = 5;
-            url = "http://www.stellarbiotechnologies.com/media/press-releases/json?limit=" + limit.toString() + "&offset=" + offset.toString();
-            //request more headlines at new offset
-            moreHeadlines(url);
-        }
-        
+        didScroll = true;
     });
+    
+    setInterval(function() {
+    //check if near end of dom
+        if ( didScroll ) {
+            didScroll = false;
+        
+            if ($win.scrollTop() + $win.height() > $(document).height() - 150) {
+                offset += 5;
+                limit = 5;
+                url = "http://www.stellarbiotechnologies.com/media/press-releases/json?limit=" + limit.toString() + "&offset=" + offset.toString();
+                //request more headlines at new offset
+                moreHeadlines(url);
+            }
+        }
+   //end if
+    }, 250);
     
 };
 
