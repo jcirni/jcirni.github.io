@@ -50,7 +50,7 @@ var main = function () {
             }
         }
    //end if
-    }, 250);
+    }, 150);
     
 };
 
