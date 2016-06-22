@@ -41,7 +41,7 @@ var main = function () {
         if ( didScroll ) {
             didScroll = false;
         
-            if ($win.scrollTop() + $win.height() > $(document).height() - 150) {
+            if ($win.scrollTop() + $win.height() > $(document).height() - 200) {
                 offset += 10;
                 limit = 10;
                 url = "http://www.stellarbiotechnologies.com/media/press-releases/json?limit=" + limit.toString() + "&offset=" + offset.toString();
