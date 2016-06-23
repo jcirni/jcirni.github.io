@@ -31,16 +31,16 @@ var main = function () {
 
     moreHeadlines(url);
     
-    //on end of document, load more headlines
+    //scroll handler
     $win.scroll(function () {
         didScroll = true;
     });
-    
+    //interval of 100ms
     setInterval(function() {
-    //check if near end of dom
+    
         if ( didScroll ) {
             didScroll = false;
-        
+            //check if near end of dom
             if ($win.scrollTop() + $win.height() > $(document).height() - 500) {
                 offset += 10;
                 limit = 10;
