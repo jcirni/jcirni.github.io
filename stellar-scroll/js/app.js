@@ -32,6 +32,7 @@ var main = function () {
     moreHeadlines(url);
     
     //scroll handler
+    
     $win.scroll(function () {
         didScroll = true;
     });
